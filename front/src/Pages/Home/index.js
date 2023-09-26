@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../../Header/index";
+import brinquedos from "./brinquedo.png";
 import "../../App.css";
 import { Link } from "react-router-dom";
 
@@ -7,6 +8,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+
       <div className="scroll-up-btn">
         <i className="fas fa-angle-up"></i>
       </div>
@@ -96,16 +98,21 @@ function App() {
         <div className="max-width">
           <h2 className="title">Serviços</h2>
           <div className="serv-content">
-            <Link to="/Produtos">
-              <div className="card">
+            <div className="card">
+              <Link to="/Produtos">
                 <div className="box">
-                  <i className="fa-solid fa-gears"></i>
+                  <img
+                    src={brinquedos}
+                    alt="brinquedos"
+                    style={{ width: "280px", height: "auto" }}
+                  />
                   Produtos
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </div>
+
             <div className="card">
-              <Link to="/delivery">
+              <Link to="/Delivery">
                 <div className="box">
                   <i className="fa-solid fa-database"></i>
                   <div className="text">Delivery</div>

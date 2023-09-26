@@ -17,9 +17,9 @@ function Header() {
         </Link>
         <ul className="menu">
           <li>
-            <a href="#home" className="menu-btn">
-              Voltar para o topo
-            </a>
+            <Link to="/" className="menu-btn">
+              Home
+            </Link>
           </li>
           <li>
             <a href="#about" className="menu-btn">
@@ -29,11 +29,6 @@ function Header() {
           <li>
             <a href="#services" className="menu-btn">
               Serviços
-            </a>
-          </li>
-          <li>
-            <a href="#contact" className="menu-btn">
-              Contato
             </a>
           </li>
         </ul>

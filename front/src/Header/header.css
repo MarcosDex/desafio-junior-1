@@ -22,7 +22,8 @@ html {
   background: #555;
 }
 .navbar {
-  position: fixed;
+  position: block;
+  background-color: rgba(26, 190, 166, 0.78);
   width: 100%;
   z-index: 999;
   padding: 30px 0;
@@ -96,5 +97,6 @@ html {
 }
 .logo {
   position: absolute;
-  right: 51%;
+  right: 85%;
+  top: -59px;
 }
