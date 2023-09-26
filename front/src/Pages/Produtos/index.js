@@ -1,5 +1,6 @@
 // Contato.js
 import React from "react";
+import Header from "../../Header/index";
 import "./produtos.css";
 
 function Produtos() {
@@ -13,17 +14,20 @@ function Produtos() {
   ];
 
   return (
-    <div>
-      <h1>Produtos</h1>
-      <ul>
-        {produtos.map((produto) => (
-          <li key={produto.id}>
-            <h3>{produto.nome}</h3>
-            <p>{produto.descricao}</p>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <>
+      <Header />
+      <div>
+        <h1>Produtos</h1>
+        <ul>
+          {produtos.map((produto) => (
+            <li key={produto.id}>
+              <h3>{produto.nome}</h3>
+              <p>{produto.descricao}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
   );
 }
 
