@@ -31,11 +31,15 @@ function Header() {
               Serviços
             </a>
           </li>
+          <li>
+            <Link to="/Agendamentos">
+            <a href="" className="menu-btn">
+              Cadastrar
+            </a>
+            </Link>
+          </li>
         </ul>
-        <div className="menu-btn">
-          <i className="fas fa-bars"></i>
         </div>
-      </div>
     </nav>
   );
 }
