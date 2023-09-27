@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "marcantoniosantos1",
+    "database": "southland",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "marcantoniosantos1",
+    "database": "southland",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "marcantoniosantos1",
+    "database": "southland",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}

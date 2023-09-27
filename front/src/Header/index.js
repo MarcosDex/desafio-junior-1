@@ -11,7 +11,7 @@ function Header() {
             <img
               src={logo}
               alt="Logo"
-              style={{ width: "250px", height: "auto" }}
+              style={{ width: "190px", height: "auto" }}
             />
           </div>
         </Link>

@@ -79,7 +79,9 @@ section .title::after {
   transform: translateX(-50%);
 }
 
-
+.abouti {
+  color: white;
+}
 .home {
   display: flex;
   background: url("../public/Sem\ Título-1.png") no-repeat center;

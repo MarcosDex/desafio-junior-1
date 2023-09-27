@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../../Header/index";
 import brinquedos from "./brinquedo.png";
+import delivery from "./pngtree-delivery-boy-with-mask-riding-bike-vector-png-image_5354632.jpg";
 import "../../App.css";
 import { Link } from "react-router-dom";
 
@@ -13,48 +14,6 @@ function App() {
         <i className="fas fa-angle-up"></i>
       </div>
 
-      {/* <nav className="navbar">
-        <div className="max-width">
-          <div className="logo">
-            <a href="#"></a>
-          </div>
-          <ul className="menu">
-            <li>
-              <a href="#home" className="menu-btn">
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#about" className="menu-btn">
-                About
-              </a>
-            </li>
-            <li>
-              <a href="#services" className="menu-btn">
-                Services
-              </a>
-            </li>
-            <li>
-              <a href="#skills" className="menu-btn">
-                Skills
-              </a>
-            </li>
-            <li>
-              <a href="#teams" className="menu-btn">
-                Tools
-              </a>
-            </li>
-            <li>
-              <a href="#contact" className="menu-btn">
-                Contact
-              </a>
-            </li>
-          </ul>
-          <div className="menu-btn">
-            <i className="fas fa-bars"></i>
-          </div>
-        </div>
-      </nav> */}
       <section className="home" id="home">
         <div className="max-width">
           <div className="home-content">
@@ -75,11 +34,8 @@ function App() {
               <img src="/welcome.png" alt="" />
             </div>
             <div className="column right">
-              <div className="text">
-                História da criação do Petshop
-                <span className="typing-2"></span>
-              </div>
-              <p>
+              <div className="text">História da criação do Petshop</div>
+              <p className="abouti">
                 Somos uma petshop que visa cuidar do bem estar do seu
                 amiguinho(o), pensando também no bem estar financeiro do(a)
                 dono(a), Fundada em 2012 pelo nosso saudosista Kunikuzushi
@@ -114,6 +70,11 @@ function App() {
             <div className="card">
               <Link to="/Delivery">
                 <div className="box">
+                  <img
+                    src={delivery}
+                    alt="delivery"
+                    style={{ width: "150px", height: "115px" }}
+                  />
                   <i className="fa-solid fa-database"></i>
                   <div className="text">Delivery</div>
                 </div>
@@ -121,12 +82,14 @@ function App() {
             </div>
 
             <div className="card">
-              <a href="/">
-                <div className="box">
-                  <i className="fa-solid fa-file"></i>
-                  <div className="text">Agendamento</div>
-                </div>
-              </a>
+              <Link to="/Agendamentos">
+                <a href="/">
+                  <div className="box">
+                    <i className="fa-solid fa-file"></i>
+                    <div className="text">Agendamento</div>
+                  </div>
+                </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -143,7 +106,9 @@ function App() {
         </span>
         <div className="footer-links">
           <a href="">Contato</a> {""}
-          <a href="/politica-de-privacidade">Política de Privacidade</a>
+          <a href="https://drive.google.com/file/d/1CQGIZZVGxkJ7aevyUgnaWK8PhK_JRreO/view?usp=sharing">
+            Política de Privacidade
+          </a>
         </div>
       </footer>
     </div>
