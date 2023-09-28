@@ -5,13 +5,7 @@ const cors = require("cors"); // release cors
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
-
-//const testAPIRouter = require("./routes/testAPI");
-const userRoutes = require("./routes/users");
-//const funcoesRoutes = require("./routes/funcoes");
-//const licencaRoutes = require("./routes/licenca");
-//const authRoutes = require("./routes/authRoutes"); // Importe suas rotas de autenticação
-//const { verifyToken } = require("./middlewares/verifyToken");
+const userRoutes = require("./routes/user");
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));

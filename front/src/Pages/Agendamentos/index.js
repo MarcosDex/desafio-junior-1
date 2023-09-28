@@ -5,12 +5,11 @@ import "./agendamento.css";
 
 function Agendamentos() {
   const [name, setName] = useState("");
-  const [matricula, setMatricula] = useState("");
-  const [licenca, setLicenca] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [telefone, setMatricula] = useState("");
+  const [endereco, setLicenca] = useState("");
+  const [senhaHash, setPassword] = useState("");
   const [confPassword, setConfPassword] = useState("");
-  const [role, setRole] = useState("");
   const [message, setMessage] = useState("");
 
   const handleChange = (e) => {
@@ -37,30 +36,26 @@ function Agendamentos() {
     setConfPassword(e.target.value);
   };
 
-  const handleRoleChange = (e) => {
-    setRole(e.target.value);
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (password !== confPassword) {
+    if (senhaHash !== confPassword) {
       alert("Senhas não são iguais");
       return;
     }
 
     try {
       // Verifique se a matrícula já existe no banco de dados
-      const matriculaExists = await axios.get(
-        `http://localhost:9000/users/check-matricula/${matricula}`
-      );
+      // const matriculaExists = await axios.get(
+      //   `http://localhost:9000/users/check-matricula/${matricula}`
+      // );
 
-      if (matriculaExists.data.exists) {
-        alert(
-          "Já existe uma conta associada a esta matrícula. Para mais informações entrar em contato com algum(a) administrador(a)"
-        );
-        return;
-      }
+      // if (matriculaExists.data.exists) {
+      //   alert(
+      //     "Já existe uma conta associada a esta matrícula. Para mais informações entrar em contato com algum(a) administrador(a)"
+      //   );
+      //   return;
+      // }
 
       // Se a matrícula não existe, continue com o cadastro
       const response = await axios.post(
@@ -68,35 +63,20 @@ function Agendamentos() {
         {
           nome: name,
           email: email,
-          senha: password,
-          matricula: matricula,
-          funcao: role,
-          licenca: licenca,
+          telefone: telefone,
+          endereco: endereco,
+          senhaHash: senhaHash,
         }
       );
 
       setMessage(response.data.mensagem);
 
-      alert(
-        'Cadastro Realizado com sucesso: "' +
-          name +
-          '", Matrícula: "' +
-          matricula +
-          '", Licença: "' +
-          licenca +
-          '", Email: "' +
-          email +
-          '", Função: "' +
-          role +
-          '"'
-      );
       setName("");
       setMatricula("");
       setLicenca("");
       setEmail("");
       setPassword("");
       setConfPassword("");
-      setRole("");
     } catch (error) {
       console.error("Erro ao cadastrar usuário:", error);
       alert("Ocorreu um erro ao cadastrar o usuário.");
@@ -159,53 +139,39 @@ function Agendamentos() {
                   onChange={(e) => handleChange(e)}
                 />
                 <br />
-                <label>Matrícula:</label>
+                <label>Email:</label>
                 <br />
                 <input
                   type="text"
-                  value={matricula}
+                  value={email}
+                  required
+                  onChange={(e) => handleEmailChange(e)}
+                />
+                <br />
+                <label>telefone:</label>
+                <br />
+                <input
+                  type="text"
+                  value={telefone}
                   required
                   onChange={(e) => handleMatriculaChange(e)}
                 />
                 <br />
-                <label>Licença:</label>
+                <label>endereco:</label>
                 <br />
                 <input
+                  id="endereco"
                   type="text"
-                  value={licenca}
+                  value={endereco}
                   required
                   onChange={(e) => handleLicencaChange(e)}
-                />
-                <br />
-                <label>Função:</label>
-                <br />
-                <select
-                  value={role}
-                  onChange={(e) => handleRoleChange(e)}
-                  required
-                >
-                  <option value="">Selecione a função</option>
-                  <option value="Administrativo">Administrativo</option>
-                  <option value="Coordenador">Coordenador</option>
-                  <option value="Professor">Professor</option>
-                  <option value="Preceptor">Preceptor</option>
-                </select>
-                <br />
-                <label>Email:</label>
-                <br />
-                <input
-                  id="email"
-                  type="email"
-                  value={email}
-                  required
-                  onChange={(e) => handleEmailChange(e)}
                 />
                 <br />
                 <label>Senha:</label>
                 <br />
                 <input
                   type="password"
-                  value={password}
+                  value={senhaHash}
                   required
                   onChange={(e) => handlePasswordChange(e)}
                 />

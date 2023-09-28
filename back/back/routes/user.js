@@ -1,7 +1,7 @@
 // routes/users.js
 const express = require("express");
 const router = express.Router();
-const User = require("../models/modelo");
+const User = require("../models/user");
 const bcrypt = require("bcrypt");
 
 router.post("/register", async (req, res) => {
@@ -57,7 +57,6 @@ router.get("/", async (req, res) => {
     res.status(500).json({ message: "Erro ao buscar usuários." });
   }
 });
-
 
 router.delete("/:id", async (req, res) => {
   const userId = req.params.id;
