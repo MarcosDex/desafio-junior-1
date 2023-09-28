@@ -2,7 +2,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home";
 import Produtos from "./Pages/Produtos";
 import Delivery from "./Pages/Delivery";
-import Agendamentos from "./Pages/Agendamentos";
+import Sobre from "./Pages/Sobre";
+import Cadastro from "./Pages/Cadastro";
+import Login from "./Pages/Login";
 function AppRoutes() {
   return (
     <BrowserRouter>
@@ -10,7 +12,9 @@ function AppRoutes() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/produtos" element={<Produtos />}></Route>
         <Route path="/delivery" element={<Delivery />}></Route>
-        <Route path="/agendamentos" element={<Agendamentos />}></Route>
+        <Route path="/sobre" element={<Sobre />}></Route>
+        <Route path="/cadastro" element={<Cadastro />}></Route>
+        <Route path="/login" element={<Login />}></Route>
       </Routes>
     </BrowserRouter>
   );

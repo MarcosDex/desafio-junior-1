@@ -1,29 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish&family=Oxanium:wght@300;400;700&family=Roboto&display=swap");
 
-.ball1 {
-  display: flex;
-  overflow: hidden;
-  position: fixed;
-  background: #962c73;
-  width: 380px;
-  height: 380px;
-  border-radius: 80%;
-  margin-top: 125px;
-  margin-left: -120px;
-}
-
-.ball2 {
-  display: flex;
-  overflow: hidden;
-  position: fixed;
-  background: #962c73;
-  width: 380px;
-  height: 380px;
-  border-radius: 80%;
-  margin-top: 300px;
-  margin-left: 150px;
-}
-
 .side-content {
   display: flex;
   height: 100%;
@@ -341,4 +317,18 @@ button:hover {
 
 button:hover {
   cursor: pointer;
+}
+
+.side-image p {
+  color: #fff;
+  font-family: Mulish;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  margin: 50px;
+  margin-top: 30px;
+  margin-bottom: 0px;
+  text-align: start;
+  letter-spacing: 1.1px;
 }

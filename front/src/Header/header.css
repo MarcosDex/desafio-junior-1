@@ -100,3 +100,33 @@ html {
   right: 85%;
   top: -49px;
 }
+
+.dropdown {
+  display: none;
+  position: absolute;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  min-width: 150px;
+}
+
+.dropdown li {
+  padding: 10px;
+  text-align: center;
+}
+
+/* Estilo ao passar o mouse */
+.menu-btn:hover + .dropdown,
+.dropdown:hover {
+  display: block;
+}
+
+/* Estilos para os links do dropdown */
+.dropdown a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  padding: 8px 16px;
+  transition: background-color 0.3s;
+}

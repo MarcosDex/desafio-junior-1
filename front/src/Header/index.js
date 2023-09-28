@@ -22,24 +22,40 @@ function Header() {
             </Link>
           </li>
           <li>
-            <a href="#about" className="menu-btn">
+            <Link to="/sobre" className="menu-btn">
               Sobre
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#services" className="menu-btn">
+            <a href="" className="menu-btn">
               Serviços
             </a>
+            <ul class="dropdown">
+              <li>
+                <Link to="/Produtos">Produtos</Link>
+              </li>
+              <li>
+                <Link to="/Delivery">Delivery</Link>
+              </li>
+              <li>
+                <Link to="/Agendamentos">Agendamento</Link>
+              </li>
+            </ul>
           </li>
           <li>
-            <Link to="/Agendamentos">
-            <a href="" className="menu-btn">
+            <Link to="/Cadastro" className="menu-btn">
+              {" "}
               Cadastrar
-            </a>
+            </Link>
+          </li>
+          <li>
+            <Link to="/login" className="menu-btn">
+              {" "}
+              Login
             </Link>
           </li>
         </ul>
-        </div>
+      </div>
     </nav>
   );
 }

@@ -1,9 +1,7 @@
 import React from "react";
 import Header from "../../Header/index";
-import brinquedos from "./brinquedo.png";
-import delivery from "./pngtree-delivery-boy-with-mask-riding-bike-vector-png-image_5354632.jpg";
+import Footer from "../../Footer/index";
 import "../../App.css";
-import { Link } from "react-router-dom";
 
 function App() {
   return (
@@ -22,95 +20,10 @@ function App() {
               Venha conferir nossos preços que são caobinados para caberem no
               seu bolso <span className="typing"></span>
             </div>
-            <a href="/">Crie sua conta agora mesmo!</a>
           </div>
         </div>
       </section>
-      <section className="about" id="about">
-        <div className="max-width">
-          <h2 className="title">Sobre nós</h2>
-          <div className="about-content">
-            <div className="column left">
-              <img src="/welcome.png" alt="" />
-            </div>
-            <div className="column right">
-              <div className="text">História da criação do Petshop</div>
-              <p className="abouti">
-                Somos uma petshop que visa cuidar do bem estar do seu
-                amiguinho(o), pensando também no bem estar financeiro do(a)
-                dono(a), Fundada em 2012 pelo nosso saudosista Kunikuzushi
-                Walker, que dedicou sua vida a medicina veterinaria. Teve então
-                por clemencia de sua cidade (Inazuma) ele decidiu criar um
-                petshop que seria capaz de atender delivery para a popolução. A
-                loja então foi passada para seu neto WalkerAway que acabou
-                colocando o nome da loja como "Walkers"
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="services" id="services">
-        <div className="max-width">
-          <h2 className="title">Serviços</h2>
-          <div className="serv-content">
-            <div className="card">
-              <Link to="/Produtos">
-                <div className="box">
-                  <img
-                    src={brinquedos}
-                    alt="brinquedos"
-                    style={{ width: "280px", height: "auto" }}
-                  />
-                  Produtos
-                </div>
-              </Link>
-            </div>
-
-            <div className="card">
-              <Link to="/Delivery">
-                <div className="box">
-                  <img
-                    src={delivery}
-                    alt="delivery"
-                    style={{ width: "150px", height: "115px" }}
-                  />
-                  <i className="fa-solid fa-database"></i>
-                  <div className="text">Delivery</div>
-                </div>
-              </Link>
-            </div>
-
-            <div className="card">
-              <Link to="/Agendamentos">
-                <a href="/">
-                  <div className="box">
-                    <i className="fa-solid fa-file"></i>
-                    <div className="text">Agendamento</div>
-                  </div>
-                </a>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <footer>
-        <span>
-          {" "}
-          © {new Date().getFullYear()}{" "}
-          <a href="https://www.linkedin.com/in/marcosdex/">
-            Marcantonio Santos Silva
-          </a>
-          <span className="far fa-copyright"></span> All rights reserved.
-        </span>
-        <div className="footer-links">
-          <a href="">Contato</a> {""}
-          <a href="https://drive.google.com/file/d/1CQGIZZVGxkJ7aevyUgnaWK8PhK_JRreO/view?usp=sharing">
-            Política de Privacidade
-          </a>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

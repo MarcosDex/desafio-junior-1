@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Header from "../../Header/index";
+import Footer from "../../Footer/index";
 import logocima from "../Produtos/logocima.jpg";
 import bolinha from "../Produtos/41DEl3vmZVL._AC_UF1000,1000_QL80_.jpg";
 import arranhador from "../Produtos/arra.jpg";
@@ -132,6 +133,7 @@ function Produtos() {
           </section>
         </main>
       </div>
+      <Footer />
     </>
   );
 }

@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import Header from "../../Header/index";
 import axios from "axios";
-import "./agendamento.css";
+import logocadastro from "../../imgs/cadastrologo.png";
 
-function Agendamentos() {
+import "./cadastro.css";
+import Footer from "../../Footer";
+
+function Cadastro() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [telefone, setMatricula] = useState("");
@@ -45,19 +48,19 @@ function Agendamentos() {
     }
 
     try {
-      // Verifique se a matrícula já existe no banco de dados
-      // const matriculaExists = await axios.get(
-      //   `http://localhost:9000/users/check-matricula/${matricula}`
-      // );
+      // Verifique se o email já existe no banco de dados
+      const emailexists = await axios.get(
+        `http://localhost:9000/users/check-email/${email}`
+      );
 
-      // if (matriculaExists.data.exists) {
-      //   alert(
-      //     "Já existe uma conta associada a esta matrícula. Para mais informações entrar em contato com algum(a) administrador(a)"
-      //   );
-      //   return;
-      // }
+      if (emailexists.data.exists) {
+        alert(
+          "Já existe uma conta associada a esta matrícula. Para mais informações entrar em contato com algum(a) administrador(a)"
+        );
+        return;
+      }
 
-      // Se a matrícula não existe, continue com o cadastro
+      // Se o email não existe, continue com o cadastro
       const response = await axios.post(
         "http://localhost:9000/users/register",
         {
@@ -95,32 +98,19 @@ function Agendamentos() {
           <div className="side-image">
             <div className="image-text">
               <p>
-                Agende com facilidade na Clínica UNIFAVIP! Atendimento de
-                qualidade e para cuidar da sua saúde com comodidade.
+                Agende com facilidade na Clínica Walkers! Atendimento de
+                qualidade e para cuidar da saúde do seu pet com comodidade.
               </p>
             </div>
-            <div className="ball1"></div>
-            <div className="ball2"></div>
-            <img src="" alt="clinica" height={350} width={350} />
+            <img src={logocadastro} alt="clinica" height={350} width={350} />
           </div>
           <div className="side-content">
             <div className="container">
-              <div className="logo-unifavip">
-                <img
-                  src=""
-                  alt="unifavip wyden"
-                  width={125}
-                  height={125}
-                  className="logo-favip"
-                />
-              </div>
               <div className="cadastro-welcome">
-                <h2>Bem-Vindo!</h2>
-                <h3>Registrar</h3>
                 <p>
                   Bem-vindo ao{" "}
                   <span style={{ fontWeight: "bold" }}>
-                    Agendamentos da Clínica UNIFAVIP! <br />
+                    Agendamentos da Clínica Walkers! <br />
                   </span>
                   Estamos comprometidos em oferecer aos nossos pacientes um{" "}
                   <span style={{ fontWeight: "bold" }}>
@@ -203,8 +193,9 @@ function Agendamentos() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }
 
-export default Agendamentos;
+export default Cadastro;

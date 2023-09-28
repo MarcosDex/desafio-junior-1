@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../../Header/index";
+import Footer from "../../Footer/index";
 import "./delivery.css";
 
 function Delivery() {
@@ -49,6 +50,7 @@ function Delivery() {
         <p>Telefone: +55 81 99952-8282</p>
         <p>Email: walkerspetshop@gmail.com</p>
       </div>
+      <Footer />
     </>
   );
 }

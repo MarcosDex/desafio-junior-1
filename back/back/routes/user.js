@@ -26,7 +26,7 @@ router.post("/register", async (req, res) => {
 });
 
 router.post("/login", async (req, res) => {
-  const { email, senha } = req.body;
+  const { email, senhaHash } = req.body;
 
   // Recupere o registro do usuário com base no email
   const user = await User.findOne({ where: { email } });
@@ -37,7 +37,7 @@ router.post("/login", async (req, res) => {
   }
 
   // Compare a senha fornecida pelo usuário com a senha criptografada no banco de dados
-  const isPasswordValid = await bcrypt.compare(senha, user.senha);
+  const isPasswordValid = await bcrypt.compare(senhaHash, user.senhaHash);
 
   if (isPasswordValid) {
     // Senha correta, autenticação bem-sucedida
@@ -48,13 +48,15 @@ router.post("/login", async (req, res) => {
   }
 });
 
-router.get("/", async (req, res) => {
-  try {
-    const users = await User.findAll();
-    res.status(200).json(users);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Erro ao buscar usuários." });
+router.post("/logado", async (req, res) => {
+  const { nome, senhaHash } = req.body;
+
+  // Recupere o registro do usuário com base no email
+  const user = await User.findOne({ where: { nome } });
+
+  // Verifique se o usuário existe
+  if (!user) {
+    return res.status(401).json({ mensagem: "ERRO" });
   }
 });
 
@@ -76,10 +78,10 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
-router.get("/check-matricula/:matricula", async (req, res) => {
+router.get("/check-email/:email", async (req, res) => {
   try {
-    const { matricula } = req.params;
-    const existingUser = await User.findOne({ where: { matricula } });
+    const { email } = req.params;
+    const existingUser = await User.findOne({ where: { email } });
 
     if (existingUser) {
       // Se uma matrícula com o mesmo valor já existe
@@ -89,8 +91,8 @@ router.get("/check-matricula/:matricula", async (req, res) => {
       res.json({ exists: false });
     }
   } catch (error) {
-    console.error("Erro ao verificar matrícula:", error);
-    res.status(500).json({ error: "Erro ao verificar matrícula" });
+    console.error("Erro ao verificar email:", error);
+    res.status(500).json({ error: "Erro ao verificar email" });
   }
 });
 
