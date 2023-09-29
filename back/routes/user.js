@@ -1,8 +1,10 @@
 // routes/users.js
 const express = require("express");
 const router = express.Router();
+const jwt = require("jsonwebtoken");
 const User = require("../models/user");
 const bcrypt = require("bcrypt");
+const jwtSecret = "123";
 
 router.post("/register", async (req, res) => {
   try {
@@ -49,12 +51,9 @@ router.post("/login", async (req, res) => {
 });
 
 router.post("/logado", async (req, res) => {
-  const { nome, senhaHash } = req.body;
-
-  // Recupere o registro do usuário com base no email
+  const { nome } = req.body;
   const user = await User.findOne({ where: { nome } });
 
-  // Verifique se o usuário existe
   if (!user) {
     return res.status(401).json({ mensagem: "ERRO" });
   }

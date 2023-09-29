@@ -30,7 +30,8 @@ function Login() {
 
       if (response.data.mensagem === "Login bem-sucedido") {
         console.log("Login bem-sucedido!");
-        navigate("/profile");
+        console.log(response);
+        navigate("/agendamentos");
       } else {
         console.log("Login Incorreto!");
       }
